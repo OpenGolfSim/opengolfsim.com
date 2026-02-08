@@ -9,39 +9,33 @@ nav_order: 1
 
 ## What is OpenGolfSim?
 
-OpenGolfSim is the first golf simulator platform that connects hardware, software, and gameplay into a seamless golf simulation experience and powerful training tool. The OpenGolfSim Desktop app runs on Windows. It includes a free simulator and acts as the central hub for managing launch monitors, control boxes, swing video replay, and more. 
+OpenGolfSim is the first free golf simulator platform for Windows and MacOS. It connects all your hardware, software, and gameplay into a seamless golf simulation experience and powerful training tool.
 
-This quick start guide is for the TL;DR crowd. Check out the more detailed articles for a better step by step guide. 
+This quick start guide is for the TL;DR crowd. Dive deep into our full desktop app documentation for a more detailed step-by-step guide.
 
 ---
 
 ## Installation
 
-1. Navigate to our downloads page to [Download the latest release](https://opengolfsim.com/account/downloads).
-2. Login with existing account or create a new account.
-3. Downlaod and Run `OpenGolfSim-x.x.x Setup.exe` to begin installation.
-4. Follow the on-screen installer prompts.
-5. After setup, the application should launch automatically.
+1. Navigate to our downloads page to [Download the latest release](https://opengolfsim.com/download) grab the latest release for your platform.
 
-**Info:** OpenGolfSim runs in the background as a system tray application and is always ready to accept connections.
+2. After installing, you'll be prompted to login with existing account or <a href="https://app.opengolfsim.com/signup">create a new account</a>.
 
----
+3. After successful login, the application should open to your home screen and course library. Before you can play on the simulator, you'll want to setup your launch monitor.
 
-## First Launch
+  1. Navigate to **Settings** > **Shot Data**
+  
+  2. Under your Launch Monitor setting, click **Change** and select and setup your launch monitor.
 
-Once installed:
+  > Note: If you don't see your make and model of launch monitor in the list, there may be a community supported connector available. Check our [Discord](/connect-with-us) for the latest experimental and community built connectors.
 
-- Open the application if it’s not already running.
-- Sign in using your OpenGolfSim account credentials.
-- You're ready to go.
+
+
+**Note:** For more detailed install help, see the [full installation documentation](/desktop/installation-guide).
 
 ---
 
 ## Next Steps
-
-### [Mobile App Installation](/mobile/)
-
-Install the companion app on your iOS or Android device to control your simulator wirelessly.
 
 ### [Video Replay Setup](/desktop/video)
 
@@ -49,10 +43,10 @@ Learn how to configure webcam-based video replay after each shot.
 
 ### [Shot Data Setup](/desktop/shot-data)
 
-Learn how you can save your shot data to allow you to analyze after a round.
+Learn how you can view and break down your shot data to analyze after a round.
 
----
+### [Course Development](/mobile/)
 
-**Note:** For more detailed install help, see the [full installation documentation](/desktop/installation-guide).
+Build your own custom courses and games to share or sell in our course store.
 
 
