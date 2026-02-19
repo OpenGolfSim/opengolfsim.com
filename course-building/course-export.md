@@ -1,10 +1,15 @@
 ---
-title: 4. Course Export
-parent: Course Building Guide
+title: Exporting
+parent: Course Building
 nav_order: 4
 ---
 
 # Course Export
+
+1. TOC
+{:toc}
+
+### Define Tees
 
 Before we can export and play the new course, we need to define each hole's par, pin locations, and tee position.
 

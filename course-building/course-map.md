@@ -1,7 +1,7 @@
 ---
-title: 2. Course Maps
-parent: Course Building Guide
-nav_order: 2
+title: Course Map
+parent: Course Building
+nav_order: 3
 ---
 
 # Course Maps
@@ -31,7 +31,7 @@ Make sure you've [downloaded and setup](/tools/getting-started/#install-inkscape
       <img src="/assets/course-building/inkscape-document.jpg" width="250" />
     </a>
 
-2. Make sure you have installed the official [OpenGolfSim color palette](/tools/getting-started/#install-ogs-color-palette) and placed the OpenGolfSim.gpl (GIMP Palette) file into the user palettes folder, which can be found via **Edit > Preferences > System > User Palettes**{: .label }
+2. Make sure you have installed the official [OpenGolfSim color palette](/tools/getting-started/#install-the-ogs-color-palette) and placed the OpenGolfSim.gpl (GIMP Palette) file into the user palettes folder, which can be found via **Edit > Preferences > System > User Palettes**{: .label }
 
 ### Fictional Course
 

@@ -1,6 +1,6 @@
 ---
-title: 3. Course Meshes
-parent: Course Building Guide
+title: Course Meshes
+parent: Course Building
 nav_order: 3
 ---
 

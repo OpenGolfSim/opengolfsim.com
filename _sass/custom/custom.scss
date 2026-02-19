@@ -7,9 +7,25 @@
 }
 .site-header {
   // display: flex;
-  min-height: 6.75rem;
+  
   border: none !important;
   // align-items: center;
+  .site-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .site-logo {
+      height: 40px;
+      width: 40px;
+      display: block;
+      margin-right: 0.8rem;
+    }
+    h3.site-logo-title {
+      margin: 0;
+      font-size: 14px !important;
+    }
+  }
 }
 .main-header {
   min-height: 4.75rem;
@@ -266,5 +282,12 @@ p.note, blockquote.note {
   text-transform: none;
 }
 small {
+  color: $grey-lt-300;
+}
+
+footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 11px;
   color: $grey-lt-300;
 }

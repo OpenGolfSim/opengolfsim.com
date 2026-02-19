@@ -1,12 +1,23 @@
 ---
-title: Course Building Guide
-parent: Course Developers
+title: Course Building
 nav_order: 4
 ---
 
-# Course Building Guide
 
-Welcome to the official OpenGolfSim course building docs! Here you'll find guides and documentation about building your own courses for OpenGolfSim!
+Want to design and build your own course or game for OpenGolfSim? You're in the right place! Here you'll find helpful guides and documentation for the OGS Course Building process.
+
+<img src="/assets/course-building/course-build.jpg" width="400" />
+
+### Join the Community
+
+Join our Discord to get help and learn more about course building or find a course designer to work with.
+
+<a href="https://discord.com/invite/RQdFHwT3bQ" target="_blank" class="btn btn-green">
+  Join Our Discord
+</a>
+
+
+# Course Building Guide
 
 At the time of writing. Building courses for OGS is still a very manual (and experimental) process and requires some existing knowledge of 3D and design tools like Unity and Inkscape. We've built some custom tools ([Course Terrain Tool](/tools/utilities/course-terrain-tool) and [Course Meshery](/tools/utilities/course-meshery)) and have some helpful scripts and menus for Unity to make process a bit less painful.
 

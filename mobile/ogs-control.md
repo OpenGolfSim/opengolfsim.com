@@ -2,7 +2,6 @@
 title: OGS Control
 parent: OpenGolfSim Mobile
 nav_order: 3
-category: tools
 thumbnail: /assets/white_256x256.png
 has_children: true
 ---

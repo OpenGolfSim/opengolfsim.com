@@ -1,6 +1,6 @@
 ---
 title: Practice Ranges
-parent: Course Developers
+parent: Course Building
 nav_order: 3
 published: false
 ---

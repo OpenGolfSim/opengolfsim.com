@@ -1,6 +1,6 @@
 ---
 title: Course Terrain Tool
-parent: Utilities
+parent: Tools
 category: tools
 nav_order: 1
 ---

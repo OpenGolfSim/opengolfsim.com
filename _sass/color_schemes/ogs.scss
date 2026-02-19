@@ -1,16 +1,18 @@
 @import "./color_schemes/dark";
 
+$base-grey: rgb(17, 28, 28);
 
-// $white: #fff;
-// $grey-dk-000: #eee;
-// $grey-dk-100: #5c5962;
-$grey-dk-200: #44434d;
-// $grey-dk-250: #302d36;
-$grey-dk-300: #1d2123;
-// $grey-lt-000: #f5f6fa;
-// $grey-lt-100: #eeebee;
-// $grey-lt-200: #ecebed;
-// $grey-lt-300: #e6e1e8;
+
+$white: #fff;
+$grey-dk-000: lighten($base-grey, 50%);
+$grey-dk-100: lighten($base-grey, 20%);
+$grey-dk-200: lighten($base-grey, 6%);
+$grey-dk-250: lighten($base-grey, 4%);
+$grey-dk-300: $base-grey;
+$grey-lt-000: lime;
+$grey-lt-100: teal;
+$grey-lt-200: orange;
+$grey-lt-300: $grey-dk-000;
 // $purple-000: #7253ed;
 // $purple-100: #5e41d0;
 // $purple-200: #4e26af;
@@ -34,7 +36,10 @@ $blue-300: #4f9cdb;
 
 
 // $blue-000: #3d5476;
-$link-color: #16ab48; // $grey-dk-300;
+// $link-color: #16ab48; // $grey-dk-300;
+$link-color: rgb(33, 212, 141); // $grey-dk-300;
 $body-background-color: $grey-dk-300;
 $sidebar-color: $grey-dk-300;
+$feedback-color: darken($sidebar-color, 1%);
 
+$border-color: $grey-dk-200;

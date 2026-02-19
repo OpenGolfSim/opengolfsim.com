@@ -1,6 +1,6 @@
 ---
 title: Course Meshery
-parent: Utilities
+parent: Tools
 category: tools
 nav_order: 2
 ---

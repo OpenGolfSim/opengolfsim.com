@@ -16,4 +16,6 @@ When playing the simulator, you can control OpenGolfSim using the keyboard. Belo
 | `C` | Display the scorecard |
 | `W` | Club Up |
 | `Q` | Club Down |
+| `M` | Mulligan |
+| `R` | Rehit |
 | `V` | Display game FPS (for debugging) |

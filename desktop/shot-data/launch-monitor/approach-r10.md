@@ -1,33 +1,42 @@
 ---
-title: Approach R10
+title: Garmin Approach R10
 parent: Launch Monitors
-nav_order: 3
+nav_order: 2
 ---
 
 # Garmin Approach R10
 
-We have an experimental Approach R10 integration with our OGS Core simulator software. Below you'll find instructions and troubleshooting tips for connecting your Approach R10.
+We have a direct bluetooth integration with the Garmin Approach R10 launch monitor. Below you'll find instructions and troubleshooting tips for connecting your Approach R10 to OpenGolfSim.
 
-{: .note }
-> The experimental Garmin Approach R10 connector is currently available on Windows platforms only.
+1. TOC
+{:toc}
 
-## Windows Setup
+## Windows
 
-First, you'll need to add the Approach R10 to your paired bluetooth devices in Windows.
+To use the Garmin Approach R10 with a Windows computer, you'll need to add the Approach R10 to your Windows bluetooth devices.
 
-1. Open **Settings** > **Bluetooth**
-2. Select **Add Bluetooth device**
-3. Turn **Approach R10** on in pairing mode (hold down the power button)
-4. Select device when discovered. The device should briefly connect and then disconnect. This is normal, just make sure the device remains in your paired devices list.
+1. On your Windows machine, open **Systems Settings > Bluetooth**{: .label }
+2. Select **Add Device > Bluetooth Device**{: .label }
+3. Turn the Approach R10 on in pairing mode (hold down the power button until the light turns blue)
+4. Select the Approach R10 when you see it in the list of devices. The device should briefly connect and then disconnect. This is normal, just make sure the device remains in your saved devices list in your Windows settings.
 
-## OpenGolfSim
+## MacOS
+
+To use the Garmin Approach R10 with a Windows computer, you should be able to simply follow the steps below in OpenGolfSim to scan and select the device.
+
+
+## OpenGolfSim Setup
 
 To setup the Approach R10 as your primary OpenGolfSim launch monitor:
 
-1. Open **OpenGolfSim Desktop** and select **Simulator** in the sidebar.
+1. Open **OpenGolfSim Desktop** and select **Settings** in the sidebar.
 
-2. When prompted to configure your launch monitor, selected the **Approach R10** option.<br>(Note: If you have already setup a launch monitor, you can go to **Settings > Shot Data** to change your launch monitor)
+2. Navigate to the **Shot Data** settings
 
-## Operation
+3. Click **Change Launch Monitor** and select **Garmin Approach R10** from the list.
 
-Once the initial setup is complete, the launch monitor should automatically pair with OpenGolfSim when turned on.
+4. OpenGolfSim should scan and display a list of nearby devices. When you see the device in the list select it and click continue.
+
+5. The device should now be setup and ready to send and receive shot data.
+
+Once this initial setup is complete, OpenGolfSim should automatically find and connect to the device when turned on.
