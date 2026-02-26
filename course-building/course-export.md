@@ -1,7 +1,7 @@
 ---
-title: Exporting
+title: Course Export
 parent: Course Building
-nav_order: 4
+nav_order: 5
 ---
 
 # Course Export
