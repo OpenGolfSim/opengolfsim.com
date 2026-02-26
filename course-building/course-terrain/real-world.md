@@ -1,13 +1,17 @@
 ---
-title: Real-World Terrain
+title: Real World Terrain
 parent: Course Terrain
 nav_order: 1
 grand_parent: Course Building
 ---
 
-## Real World Terrain
+# Real World Terrain
 
-You can source real world, public domain terrain data from around the world using [Course Terrain Tool](/tools/utilities/course-terrain-tool), one of our free course building tools.
+You can source real world, public domain terrain data from around the world using [Course Terrain Tool](/tools/course-terrain-tool), one of our free course building tools.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H5YyLU_PCIo?si=U_yOlw89b6tEq6C8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 1. Open Course Terrain Tool and zoom to the area you want to capture.
 2. Hold shift while clicking the map to set the center of your capture area
@@ -24,7 +28,3 @@ You can source real world, public domain terrain data from around the world usin
 > Copyright Notice
 >
 > When submitting your course to our course store, it must comply with all applicable copyright laws to be approved. We are additionally required to respond to all DCMA copyright violation requests. Reach out to find out more about what is and is not allowed.
-
-#### Video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H5YyLU_PCIo?si=U_yOlw89b6tEq6C8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

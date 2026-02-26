@@ -36,7 +36,9 @@ Before we can export and play the new course, we need to define each hole's par,
 1. You'll first need to assign an AssetBundle to your main course scene.
 
     1. In Unity, locate and select your scene in your project folder. 
+
     2. At the bottom of the Inspector you should see an `AssetBundle` section. Click the dropdown and add create a new asset bundle.
+
     3. Enter a unique name/slug for your course (all lowercase and no spaces). (e.g. `spacerange` or `the_moon_gc`)
 
 
@@ -65,11 +67,5 @@ Before we can export and play the new course, we need to define each hole's par,
 
 2. Start (or restart) the OpenGolfSim desktop app, and you should see your course with some generic details now in your library.
 
+3. If you want a custom poster for your local course. You can add a file named `poster.jpg` to your course build folder.
 
-{: .note }
-> Due to a technical bug, you may need to remove the mac build on windows, or the windows build on mac from your export folder before attempting to load it into OGS. If your course renders as pink, it's likely using the wrong version for your system.
-
----
-
-
-[Next up: Build Your Course](/tools/course-building/course-export){: .btn }

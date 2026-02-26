@@ -5,12 +5,17 @@ grand_parent: Course Building
 nav_order: 3
 ---
 
-## Unity Import
+# Importing Terrain
 
 To visualize and inspect your terrain data, you'll want to import the RAW file as a new terrain object in Unity.
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PebH5B-MC8A?si=d3ACrfBi6fwQx0B1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 {: .note }
-> If you are creating your own [fictional terrain](./fictional), you can skip these steps.
+> If you are creating your own [fictional terrain](/course-building/course-terrain/fictional), you can skip these steps.
+
 
 1. In Unity, import your .RAW terrain file you created in Course Terrain Tool in the terrain settings.
 
@@ -43,4 +48,4 @@ To visualize and inspect your terrain data, you'll want to import the RAW file a
 
 You should now have your satellite imagery lined up with your terrain slopes. Fly around to inspect that things like bunkers and lakes are lining up with your sand. If you notice things are just slightely off, you can manually adjust your satellite imagery file in GIMP or Photoshop.
 
-If things look good, you can now start to edit, dig, or smooth-out your course terrain using Unity's built-in terrain tools. When you're ready you'll want to [export](./exporting) a new RAW file before creating your course meshes.
+If things look good, you can now start to edit, dig, or smooth-out your course terrain using Unity's built-in terrain tools. When you're ready you'll want to [export](/course-building/course-terrain/exporting) a new RAW file before creating your course meshes.
