@@ -30,46 +30,12 @@ To get started, downloaded and install Unity Editor version `6000.2.6f2`. It nee
 
 ## 2. Install Project Template
 
-Next, download one of our OpenGolfSim Unity project templates from our github repository.
+Next, download our Unity project template from our github repository and add it as a new project in Unity.
 
-We have two project templates for each of our built-in simulator cores, one for both desktop and mobile devices using Unity's <a href="https://docs.unity3d.com/Manual/universal-render-pipeline" target="_blank">Universal Render Pipeline</a> and another for desktop-only devices using Unity's <a href="https://docs.unity3d.com/Manual/high-definition-render-pipeline" target="_blank">High-Definition Render Pipeline</a>.
-
-### Universal Project Template (URP)
-
-
-We recommend starting with our universal template which allows for building courses that are playable on both mobile and desktop devices.
-
-Create courses playable on:
-
-- Windows
-- MacOS
-- Android
-- iOS
-
-<a href="https://github.com/OpenGolfSim/unity-universal-template/archive/refs/heads/main.zip" target="_blank" class="btn">Universal Project Template (URP)</a>
+<a href="https://github.com/OpenGolfSim/unity-universal-template/archive/refs/heads/main.zip" target="_blank" class="btn">OpenGolfSim Project Template (URP)</a>
 
 {: .note }
-> This is the recommended template for new course builders.
-
----
-
-### Desktop Project Template (HDRP)
-
-For more advanced users that want to take advantage of additional GPU capabilities of desktop computers and forgo mobile support, we also provide an HDRP project template.
-
-Create courses playable on:
-
-- Windows
-- MacOS
-
-
-<a href="https://github.com/OpenGolfSim/unity-project-template/archive/refs/heads/main.zip" target="_blank" class="btn">Desktop Project Template (HDRP)</a>
-
-{: .warning }
-> Heads up: Our HDRP template is for more advanced course builders.
-
-
----
+> While URP is the recommended pipeline template for all new course builds, we do still offer an [HDRP-based template](https://github.com/OpenGolfSim/unity-project-template) for more advanced users that only want to create courses for Mac & PC.
 
 
 ### Adding the project to Unity Hub
