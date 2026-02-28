@@ -6,7 +6,7 @@ nav_order: 2
 
 # Exporting Meshes
 
-To get your meshes from Meshery into Unity we'll export an OBJ file containing all your new meshes and then import that OBJ file into your Unity project. These meshes will sit just above or replace your terrain layer. Make sure you're using the latest [project template](/course-building/getting-started/#) and have the OpenGolfSim Developer Toolkit package, which should include a tool for importing and batch assigning base materials to your meshes.
+To get your meshes from Meshery into Unity we'll export an OBJ file containing all your new meshes and then import that OBJ file into your Unity project. These meshes will sit just above or replace your terrain layer. Make sure you're using the latest [project template](/course-building/getting-started/#2-install-project-template) which should contain the latest **OpenGolfSim Developer Toolkit** package with scripts for importing your meshes and building your course.
 
 ## Export from Meshery
 
