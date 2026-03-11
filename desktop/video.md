@@ -1,7 +1,7 @@
 ---
 parent: OpenGolfSim Desktop
 title: Swing Video
-nav_order: 5
+nav_order: 6
 ---
 
 # Swing Video

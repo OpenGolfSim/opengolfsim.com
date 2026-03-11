@@ -2,6 +2,7 @@
 parent: OpenGolfSim Desktop
 title: Developer API
 thumbnail: /assets/white_256x256.png
+nav_order: 7
 ---
 
 At OpenGolfSim, we believe in being as transparent and developer friendly as possible. We think this helps grow an active and engaged community and empowers more users to build cool things. 
