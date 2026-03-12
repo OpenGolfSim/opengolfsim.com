@@ -24,6 +24,3 @@ On MacOS the log file can be found in your user's `Logs` folder:
 ```
 ~/Library/Logs/opengolfsim-desktop/main.log 
 ```
-
-{: .note }
-> You should be able to copy+paste the above string into your file explorer address bar.
