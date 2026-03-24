@@ -2,7 +2,6 @@
 parent: OpenGolfSim Desktop
 title: Plugins
 nav_order: 8
-published: false
 ---
 
 # Plugins
@@ -12,6 +11,10 @@ You can extend OpenGolfSim by writing your own custom plugins, which run within 
 1. TOC
 {:toc}
 
+
+## SDK Documentation
+
+You can browse our full [Plugin SDK Documentation](/apis/plugins/) here.
 
 ## Install Plugins
 
@@ -45,14 +48,73 @@ To create a new custom plugin, create a new folder in the OpenGolfSim `plugins/`
 
     ```json
     {
-      "name": "OpenConnect API",
+      "name": "Connector API",
       "version": "1.0.0",
-      "description": "Creates an OpenConnect v1 API server to allow connectors to send shot data over TCP",
-      "main": "index.js",
+      "description": "Creates a simple TCP server to allow connectors to send and receive shot data",
       "plugin": {
         "type": "launch"
       }
     }
     ```
 
-1. `index.js` - This file will contain your javascript plugin code. When your plugin is started we'll execute the code in this file.
+1. `index.js` - This file will contain all your javascript plugin code. When your plugin is started we'll execute the code in this file.
+
+
+```javascript
+const PORT = 3921;
+
+const device = { isConnected: false, isReady: false };
+
+
+const serverCallback = (socket) => {
+  // A TCP client has connected
+  device.isConnected = true;
+  launchMonitor.updateDeviceStatus(device);
+
+  socket.on('data', (data) => {
+    // A message has been received
+    console.log(`Socket data received`);
+    try {
+      // Parse the JSON payload
+      const obj = JSON.parse(data);
+      if (obj.type === 'device') {
+        // Set the status to ready
+        launchMonitor.setReady(obj.status === 'ready');
+      } else if (obj.type === 'shot') {
+        // Send the shot data in OpenGolfSim format
+        launchMonitor.sendShot({
+          ballSpeed: obj.shot.speed,
+          verticalLaunchAngle: obj.shot.vla,
+          horizontalLaunchAngle: obj.shot.hla,
+          spinSpeed: obj.shot.totalspin,
+          spinAxis: obj.shot.spinaxis
+        });
+      }
+
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+  socket.on('end', () => {
+    console.log(`Socket ended`);
+    device.isConnected = false;
+    launchMonitor.updateDeviceStatus(device);
+  });
+
+  socket.on('error', (err) => {
+    console.error(`Socket error: ${err}`);
+  });
+};
+
+const server = network.createServer(serverCallback);
+
+server.on('close', () => {
+  console.log('TCP server closed');
+});
+
+console.log(`Starting TCP server...`);
+server.listen(PORT, () => {
+  console.log(`TCP server listening at 127.0.0.1:${PORT}`);
+});
+```
