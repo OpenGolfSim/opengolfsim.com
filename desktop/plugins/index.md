@@ -13,7 +13,7 @@ You can extend OpenGolfSim by writing your own custom plugins, which run within 
 
 ## Execution Environment
 
-For security, our Plugin SDK operates in a isolated script context.
+For security, our Plugin SDK operates in a isolated script context. So we expose some global namespaces to enable communications with OpenGolfSim and launch monitors over network (TCP, WebSockets) or bluetooth. 
 
 - No Module System: require(), import, and export are disabled.
 
@@ -21,22 +21,31 @@ For security, our Plugin SDK operates in a isolated script context.
 
 - Standard JS: Only ECMAScript built-ins (e.g., `JSON`, `Map`, `Math`) are present.
 
-## SDK Documentation
+### Documentation
 
-You can browse our full [Plugin SDK Documentation](/apis/plugins/) here.
+- [SDK Reference](/apis/plugins/) - Our full plugin SDK reference docs.
+- [`plugins.d.ts`](https://help.opengolfsim.com/apis/plugins.d.ts) - Our SDK type definition file. Useful for supplying to LLMs or IDEs for programmatic information about our SDK methods and options.
+
+  {: .note }
+  > Most modern IDEs like VSCode will load our SDK types for reference and code completion by adding a triple slash reference at the top of your plugin code that points to a local version of the `plugins.d.ts` file. Learn more about [triple slash directives](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html).
+  > ```
+  > /// <reference path="plugins.d.ts" />
+  > ```
 
 ## Install Plugins
 
-To install an new plugin, copy the provided plugin to your OpenGolfSim `plugins/` folder.
+To install a plugin, copy the provided plugin to your OpenGolfSim `plugins/` folder (see below).
 
 ### Plugin Folder Location
+
+The plugin folder contains all your installed plugins.
 
 #### Windows
 
 On Windows, the plugins folder should be found at:
 
 ```
-%USERPROFILE%\AppData\Roaming\opengolfsim-desktop\plugins\your-custom-plugin
+%USERPROFILE%\AppData\Roaming\opengolfsim-desktop\plugins\
 ```
 
 #### MacOS
@@ -44,7 +53,7 @@ On Windows, the plugins folder should be found at:
 On MacOS, the plugins folder should be found at:
 
 ```
-~/Library/Application Support/opengolfsim-desktop/plugins/your-custom-plugin
+~/Library/Application Support/opengolfsim-desktop/plugins/
 ```
 
 ## Development
@@ -68,62 +77,67 @@ To create a new custom plugin, create a new folder in the OpenGolfSim `plugins/`
 
 1. `index.js` - This file will contain all your javascript plugin code. When your plugin is started we'll execute the code in this file.
 
+    Here's a simple example of creating a new TCP server on port `3921` that listens for status and shot data events, and sends them to OpenGolfSim.
 
-```javascript
-const PORT = 3921;
+    ```javascript
+    /// <reference path="plugins.d.ts" />
 
-const device = { isConnected: false, isReady: false };
+    const PORT = 3921;
 
+    const device = { isConnected: false, isReady: false };
 
-const serverCallback = (socket) => {
-  // A TCP client has connected
-  device.isConnected = true;
-  launchMonitor.updateDeviceStatus(device);
+    const server = network.createServer((socket) => {
+      // A TCP client has connected
+      device.isConnected = true;
+      shotData.updateDeviceStatus(device);
 
-  socket.on('data', (data) => {
-    // A message has been received
-    console.log(`Socket data received`);
-    try {
-      // Parse the JSON payload
-      const obj = JSON.parse(data);
-      if (obj.type === 'device') {
-        // Set the status to ready
-        launchMonitor.setReady(obj.status === 'ready');
-      } else if (obj.type === 'shot') {
-        // Send the shot data in OpenGolfSim format
-        launchMonitor.sendShot({
-          ballSpeed: obj.shot.speed,
-          verticalLaunchAngle: obj.shot.vla,
-          horizontalLaunchAngle: obj.shot.hla,
-          spinSpeed: obj.shot.totalspin,
-          spinAxis: obj.shot.spinaxis
-        });
-      }
+      socket.on('data', (data) => {
+        // A message has been received
+        logging.info(`Socket data received`);
+        try {
+          // Parse the JSON payload
+          const obj = JSON.parse(data);
 
-    } catch (error) {
-      console.error(error);
-    }
-  });
+          if (obj.type === 'device') {
+            // Set the status to ready
+            device.isReady = obj.status === 'ready';
+            shotData.updateDeviceStatus(device);
 
-  socket.on('end', () => {
-    console.log(`Socket ended`);
-    device.isConnected = false;
-    launchMonitor.updateDeviceStatus(device);
-  });
+          } else if (obj.type === 'shot') {
+            // Send the shot data in OpenGolfSim format
+            shotData.sendShot({
+              ballSpeed: obj.shot.speed,
+              verticalLaunchAngle: obj.shot.vla,
+              horizontalLaunchAngle: obj.shot.hla,
+              spinSpeed: obj.shot.totalspin,
+              spinAxis: obj.shot.spinaxis
+            });
 
-  socket.on('error', (err) => {
-    console.error(`Socket error: ${err}`);
-  });
-};
+          }
 
-const server = network.createServer(serverCallback);
+        } catch (error) {
+          logging.error(error);
+        }
+      });
 
-server.on('close', () => {
-  console.log('TCP server closed');
-});
+      socket.on('end', () => {
+        logging.info(`Socket ended`);
+        device.isConnected = false;
+        shotData.updateDeviceStatus(device);
+      });
 
-console.log(`Starting TCP server...`);
-server.listen(PORT, () => {
-  console.log(`TCP server listening at 127.0.0.1:${PORT}`);
-});
-```
+      socket.on('error', (err) => {
+        logging.error(`Socket error: ${err}`);
+      });
+    });
+
+    server.on('close', () => {
+      logging.info('TCP server closed');
+    });
+
+    logging.info(`Starting TCP server...`);
+    server.listen(PORT, () => {
+      logging.info(`TCP server listening at 127.0.0.1:${PORT}`);
+    });
+
+    ```

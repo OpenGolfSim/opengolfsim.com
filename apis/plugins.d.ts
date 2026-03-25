@@ -213,6 +213,7 @@ declare global {
       uuid: string;
     }
 
+    /** The advertisement data for the bluetooth device */
     interface BluetoothDeviceAdvertisement {
       localName: string;
       serviceData: {
@@ -256,6 +257,26 @@ declare global {
 
   }
 
+  namespace webSockets {
+
+    interface WebSocket {
+      /** Emitted when a new message is received */
+      on(event: 'message', listener: (d: string) => void): this;
+      /** Emitted when a socket connection is successfully established */
+      on(event: 'connect', listener: () => void): this;
+      /** Emitted once the socket is fully closed */
+      on(event: 'close', listener: () => void): this;
+      /** Emitted when an error occurs */
+      on(event: 'error', listener: (e: Error) => void): this;
+
+      off(event: 'message', listener: (d: string) => void): this;
+      off(event: 'connect', listener: () => void): this;
+      off(event: 'close', listener: () => void): this;
+      off(event: 'error', listener: (e: Error) => void): this;
+    }
+
+    function createWebSocket(socketUrl: string | URL): WebSocket;
+  }
 }
 
 export {};
