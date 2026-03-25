@@ -11,6 +11,15 @@ You can extend OpenGolfSim by writing your own custom plugins, which run within 
 1. TOC
 {:toc}
 
+## Execution Environment
+
+For security, our Plugin SDK operates in a isolated script context.
+
+- No Module System: require(), import, and export are disabled.
+
+- Global Scope: Only the specific namespaces defined below are available.
+
+- Standard JS: Only ECMAScript built-ins (e.g., `JSON`, `Map`, `Math`) are present.
 
 ## SDK Documentation
 
