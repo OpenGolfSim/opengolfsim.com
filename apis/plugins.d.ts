@@ -189,6 +189,8 @@ declare global {
       off(event: 'connect', listener: () => void): this;
       off(event: 'close', listener: () => void): this;
       off(event: 'error', listener: (e: Error) => void): this;
+      
+      send(data: ArrayBufferLike | string): void;
     }
 
     function createWebSocket(socketUrl: string | URL): WebSocket;
