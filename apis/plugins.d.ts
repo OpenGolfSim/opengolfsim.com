@@ -177,7 +177,7 @@ declare global {
 
     interface WebSocket {
       /** Emitted when a new message is received */
-      on(event: 'message', listener: (d: string) => void): this;
+      on(event: 'message', listener: (d: ArrayBufferLike | string) => void): this;
       /** Emitted when a socket connection is successfully established */
       on(event: 'connect', listener: () => void): this;
       /** Emitted once the socket is fully closed */
