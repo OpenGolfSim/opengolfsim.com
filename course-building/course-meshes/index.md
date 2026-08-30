@@ -1,7 +1,7 @@
 ---
 title: Course Meshes
 parent: Course Building
-nav_order: 4
+nav_order: 5
 has_children: true
 ---
 
@@ -9,6 +9,6 @@ has_children: true
 
 <img src="/assets/course-building/meshes.jpg" width="500" alt="Course Mesh Example" />
 
-To create separate playable surfaces, like fairways and greens, we need to convert the basic shapes we drew in Inkscape into 3D objects that are sloped to match our terrain. We created a specialized tool for this, called Meshery.
+To create separate playable surfaces, like fairways and greens, we need to convert the basic shapes we drew in Inkscape into 3D objects that are sloped to match our terrain.
 
 

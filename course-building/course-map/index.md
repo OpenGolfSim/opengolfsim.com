@@ -3,6 +3,7 @@ title: Course Map
 parent: Course Building
 nav_order: 3
 has_children: true
+published: false
 ---
 
 # Course Map

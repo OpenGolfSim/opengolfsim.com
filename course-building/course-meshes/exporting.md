@@ -2,6 +2,7 @@
 title: Exporting Meshes
 parent: Course Meshes
 nav_order: 2
+published: false
 ---
 
 # Exporting Meshes

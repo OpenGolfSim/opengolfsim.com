@@ -1,8 +1,9 @@
 ---
 title: Importing Terrain
-parent: Course Terrain
+parent: Terrain
 grand_parent: Course Building
 nav_order: 3
+published: false
 ---
 
 # Importing Terrain

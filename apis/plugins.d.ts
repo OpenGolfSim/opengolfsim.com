@@ -46,23 +46,52 @@ declare global {
     };
 
     type Shot = {
-      shotNumber: number;
-      ballSpeed: number;
-      verticalLaunchAngle: number;
-      horizontalLaunchAngle: number;
-      spinSpeed: number;
-      spinAxis: number;
+      /**
+       * An increasing or unique shot number for the session
+       */
+      shotNumber?: number,
+      /**
+       * The ball speed in MPH (miles per hour)
+       */
+      ballSpeed: number,
+      /**
+       * The vertical launch direction in degrees
+       */
+      verticalLaunchAngle: number,
+      /**
+       * The horizontal launch direction in degrees
+       */
+      horizontalLaunchAngle: number,
+      /**
+       * The total spin speed in revelutions per minute
+       */
+      spinSpeed: number,
+      /**
+       * The spin axis in degrees
+       */
+      spinAxis: number
     };
+
+    type Club = {
+      /**
+       * The unique ID for this club
+       */
+      id: string;
+      /**
+       * The display name for this club
+       */
+      name: string;
+      /**
+       * Distance set for this club in meters
+       */
+      distance: number;
+    }
     
-    /** Listen for shot events */
-    function on(event: 'shot', listener: (shot: Shot) => void): void;
     /** Listen for club change events */
-    function on(event: 'club', listener: (clubId: string) => void): void;
-    
-    /** Remove a shot event listener */
-    function off(event: 'shot', listener: (shot: Shot) => void): void;
+    function on(event: 'club', listener: (club: Club) => void): void;
+
     /** Remove a club event listener */
-    function off(event: 'club', listener: (clubId: string) => void): void;
+    function off(event: 'club', listener: (club: Club) => void): void;
     
     /** Set the launch monitor status */
     function updateDeviceStatus(status: Status): void;
@@ -117,6 +146,7 @@ declare global {
 
     /** Represents a bluetooth characteristic on the device */
     interface BluetoothCharacteristic {
+      uuid: string;
       on(event: 'data', listener: (data: ArrayBufferLike, isNotification: boolean) => void): this;
       read(): Promise<ArrayBufferLike>;
       write(data: ArrayBufferLike, withoutResponse?: boolean): Promise<void>;
@@ -154,6 +184,7 @@ declare global {
       readonly state: BluetoothDeviceState;
 
       connect(): Promise<void>;
+      disconnect(): Promise<void>;
       discoverAllServicesAndCharacteristics(): Promise<{
         services: BluetoothService[];
         characteristics: BluetoothCharacteristic[];

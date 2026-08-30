@@ -2,6 +2,7 @@
 title: Course Layer
 parent: Course Map
 nav_order: 1
+published: false
 ---
 
 # Course Layer

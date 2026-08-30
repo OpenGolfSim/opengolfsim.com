@@ -1,30 +1,33 @@
 ---
 title: Real World Terrain
-parent: Course Terrain
+parent: Terrain
 nav_order: 1
 grand_parent: Course Building
 ---
 
-# Real World Terrain
+## Real World Terrain
 
-You can source real world, public domain terrain data from around the world using [Course Terrain Tool](/tools/course-terrain-tool), one of our free course building tools.
+You can use Meshery to search for public-domain terrain data from around the world.
 
+1. In the Map tab of your Meshery project, zoom to the area you want to capture.
+2. Click the <span class="material-icons">filter_center_focus</span> button, or hold shift while clicking the map to set the center of your capture area.
+4. Adjust the **Course Size** so it contains your full course in the capture area.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H5YyLU_PCIo?si=U_yOlw89b6tEq6C8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{: .tip } 
+> Terrain data must be a square, so you'll want to drag and adjust to find the smallest square that fits your course within it.
 
+5. Select from available lidar data or global DEM coverage and click the **Download**{: .label } button to start processing
 
-1. Open Course Terrain Tool and zoom to the area you want to capture.
-2. Hold shift while clicking the map to set the center of your capture area
-4. Drag the slider to change the size of your capture area.
+    - Lidar will be more accurate (0.2 - 1m), but may require some clean up and smoothing.
+    - DEM data will be less accurate (10 - 30m), but is mostly usable as is.
 
-    <small>Note: Terrain data must be a square, so you'll need to drag and adjust to find the smallest square that fits your course within it.</small>
-
-5. Search for lidar data or import LAZ files to the map directly
-
-6. Click **Export**{: .label } and Configure your export
-
+6. When the data is completed processing, you can preview and edit it in the <a href="./editing">Terrain Editor</a>.
 
 {: .warning-title }
 > Copyright Notice
 >
 > When submitting your course to our course store, it must comply with all applicable copyright laws to be approved. We are additionally required to respond to all DCMA copyright violation requests. Reach out to find out more about what is and is not allowed.
+
+---
+
+Next up: <a href="/course-building/course-terrain/editing">**Edit Terrain**</a>

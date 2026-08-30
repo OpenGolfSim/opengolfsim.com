@@ -1,8 +1,9 @@
 ---
 title: Exporting Terrain
-parent: Course Terrain
+parent: Terrain
 grand_parent: Course Building
 nav_order: 4
+published: false
 ---
 
 ## Unity Export

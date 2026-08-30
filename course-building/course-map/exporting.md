@@ -2,6 +2,7 @@
 title: Exporting Image
 parent: Course Map
 nav_order: 3
+published: false
 ---
 
 # Export Course Map
